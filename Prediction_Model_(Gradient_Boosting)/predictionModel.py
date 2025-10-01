@@ -1,6 +1,6 @@
 
 """
-CORRECTED CRISIS PREDICTION MODEL - FINAL VERSION
+CRISIS PREDICTION MODEL - FINAL VERSION
 ===============================================
 
 This model fixes all the issues identified in the previous version:
@@ -13,7 +13,7 @@ This model fixes all the issues identified in the previous version:
 
 Author: Crisis Prediction Research Team
 Date: October 2025  
-Version: Corrected - Production Ready
+
 """
 
 import pandas as pd
@@ -33,7 +33,7 @@ warnings.filterwarnings('ignore')
 
 class CorrectedCrisisPredictionModel:
     """
-    Corrected Crisis Prediction Model with Realistic Probabilities
+    Crisis Prediction Model with Realistic Probabilities
 
     Key Fixes:
     - Proper probability calibration (no 0.99/0.001 saturation)
@@ -398,7 +398,7 @@ class CorrectedCrisisPredictionModel:
 
         return predictions_df
 
-    def export_results(self, predictions, df_model, prefix='Corrected_Crisis_Prediction'):
+    def export_results(self, predictions, df_model, prefix='Crisis_Prediction'):
         """Export comprehensive results with proper formatting"""
         print("Exporting results...")
 
@@ -445,20 +445,20 @@ class CorrectedCrisisPredictionModel:
         # Generate comprehensive report
         high_risk_countries = country_summary[country_summary['Max_Crisis_Prob'] > 0.5]
 
-        report_content = f"""# Corrected Crisis Prediction Report
+        report_content = f"""# Crisis Prediction Report
 
 **Generated:** {datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC
 **Best Model:** {self.best_model_name}
 **Model Performance:** F1={self.model_performance[self.best_model_name]['f1']:.3f}, AUC={self.model_performance[self.best_model_name]['auc']:.3f}
 
-## Key Corrections Made
+# ## Key Corrections Made
 
-### Problems Fixed:
-1. **Probability Saturation**: Removed 0.99/0.001 extremes - now realistic distribution
-2. **Static Evolution**: Probabilities now change realistically over time
-3. **Overfitting**: Used proper cross-validation and calibration
-4. **Generic Causes**: Country-specific risk factor attribution
-5. **Unrealistic Accuracy**: Model shows realistic performance metrics
+# ### Problems Fixed:
+# 1. **Probability Saturation**: Removed 0.99/0.001 extremes - now realistic distribution
+# 2. **Static Evolution**: Probabilities now change realistically over time
+# 3. **Overfitting**: Used proper cross-validation and calibration
+# 4. **Generic Causes**: Country-specific risk factor attribution
+# 5. **Unrealistic Accuracy**: Model shows realistic performance metrics
 
 ### New Features:
 - **Calibrated Probabilities**: Using CalibratedClassifierCV for proper estimates
@@ -507,7 +507,7 @@ class CorrectedCrisisPredictionModel:
 - Balanced class weights
 - Robust scaling for outlier resistance
 
-This corrected model provides realistic, actionable crisis predictions.
+This model provides realistic, actionable crisis predictions.
 """
 
         with open(f'{prefix}_Report.md', 'w') as f:
@@ -535,12 +535,12 @@ This corrected model provides realistic, actionable crisis predictions.
         print(f"Model saved to {filename}")
 
 def main(food_file=r'Prediction_Model_(Gradient_Boosting)\food-crisis-data.xlsx', economic_file=r'Prediction_Model_(Gradient_Boosting)\economic-crisis-data.xlsx',
-         output_prefix='Corrected_Crisis_Prediction'):
+         output_prefix='Crisis_Prediction'):
     """
-    Main execution function for corrected crisis prediction
+    Main execution function for crisis prediction
     """
     print("="*80)
-    print("CORRECTED CRISIS PREDICTION MODEL")
+    print("CRISIS PREDICTION MODEL")
     print("="*80)
     print("Generating realistic, calibrated crisis predictions...")
     print()
@@ -583,7 +583,7 @@ def main(food_file=r'Prediction_Model_(Gradient_Boosting)\food-crisis-data.xlsx'
 
         # Final summary
         print("="*80)
-        print("CORRECTED MODEL EXECUTION COMPLETED!")
+        print("MODEL EXECUTION COMPLETED!")
         print("="*80)
 
         best_perf = model.model_performance[model.best_model_name]
